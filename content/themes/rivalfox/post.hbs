@@ -1,0 +1,67 @@
+{{!< default }}
+{{#post}}
+<div class="wrapper">
+  <!-- Header -->
+  <header class="header">
+    <div class="cover full-image" style="background-image: url({{ image }});"></div>
+    <div class="table-center text-center">
+      <div class="mask">
+        <div class="row layoutSingleColumn-lg">
+          <div class="medium-12 columns">
+            <span class="caps">{{ @blog.title }} - {{#foreach tags}}{{#if @first}}{{ name }}{{/if}}{{/foreach}}</span>
+            <h1>{{ title }}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Posted By -->
+  <section class="posted--by">
+    <div class="row fluid">
+      <div class="text-left hide-for-small hide-for-medium medium-7 large-6 large-offset-1 columns">
+        <p class="account graf--p__list">Posted By {{#author}}<a href="{{ url }}" class="posted--user">{{ name }}</a>{{/author}}  {{ date published_at timeago="true"}} in {{#foreach tags}}<a href="{{ url }}" class="tag">{{ name }}</a>{{#unless @last}}, {{/unless}}{{/foreach}}</p>
+      </div>
+      <div class="medium-6 large-4 columns text-right">
+        <ul class="button-group social">
+          <li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{ @blog.url }}{{ url }}&title={{ title }}" class="button"><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="https://www.twitter.com/share?text={{ title }}url={{ @blog.url }}{{ url }}" class="button"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ @blog.url }}{{ url }}" class="button"><i class="fa fa-facebook"></i></a></li>
+          {{!-- <li><a href="#" class="button"><i class="fa fa-share-alt"></i></a></li> --}}
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- Article Body -->
+  <section class="article">
+    <div class="row layoutSingleColumn">
+      <div class="medium-12 columns">
+        {{ content }}
+      </div>
+    </div>
+  </section>
+  {{> post_footer }}
+  <div class="row layoutSingleColumn border-posted">
+    <div class="medium-12 columns text-center">
+      <p class="account graf--p__list">Posted By {{#author}}<a href="{{ url }}" class="posted--user">{{ name }}</a>{{/author}}  {{ date published_at timeago="true"}} in {{#foreach tags}}<a href="{{ url }}" class="tag">{{ name }}</a>{{#unless @last}}, {{/unless}}{{/foreach}}</p>
+    </div>
+  </div>
+  {{#author}}
+    <section class="about">
+      <div class="row layoutSingleColumn small-only-text-center">
+        <div class="medium-2 columns">
+          <img src="{{ image }}" class="about--image" alt="{{ name }}">
+        </div>
+        <div class="medium-10 columns">
+          <div class="about--text">
+            <p><strong>{{ name }}</strong> – {{ bio }}</p>
+            <ul class="button-group">
+              <li><a href="{{ website }}">Website</a></li>
+            </ul>
+        </div>
+      </div>
+    </section>
+  {{/author}}
+  {{> signup }}
+  {{> disqus }}
+</div>
+{{/post}}
