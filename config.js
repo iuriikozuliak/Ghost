@@ -10,7 +10,7 @@ config = {
     // When running Ghost in the wild, use the production environment
     // Configure your URL and mail settings here
     production: {
-        url: 'http://ghost-o.rivalfox.com',
+        url: 'http://haus.rivalfox.com/blog',
         mail: {},
         database: {
             client: 'mysql',
