@@ -1,13 +1,14 @@
-<nav class="nav">
+<div class="nav">
   <a href="{{ @blog.url }} " class="logo">
     <img src="{{ @blog.logo }}" alt="{{ @blog.title }}">
   </a>
-  {{!-- <a href="#" class="search"><i class="fa fa-search"></i></a> --}}
-</nav>
-{{!-- <div id="search" class="row hide layoutSingleColumn-lg">
-  <div class="small-10 medium-5 columns center">
-    <form action="/search" onsubmit="return false;">
-      <input class="textInput" type="search" placeholder="Type to search">
-    </form>
+  <div class="menu">
+    <a href="/product">How It Works</a>
+    <a href="/about">About Us</a>
+    <a class="active" href="/blog">Blog</a>
+    <a href="/about/#contact_us">Contact</a>
+    <a href="/request_a_demo">
+          Request a Demo
+        </a>
   </div>
-</div> --}}
+</div>

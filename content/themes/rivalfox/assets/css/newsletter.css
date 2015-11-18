@@ -77,3 +77,58 @@
     font-size: 17px !important;
   }
 }
+
+.menu {
+  line-height: 180px;
+  height: 50px;
+  float: right;
+  white-space: nowrap;
+  margin: 0;
+  padin
+}
+
+.menu a {
+  margin: 0 1.5em;
+  white-space: nowrap;
+  text-decoration: none;
+  font-size: 22px;
+  vertical-align: sub;
+}
+
+.menu a:hover:not(.btn), .menu a:focus:not(.btn), .menu a.active {
+  color: #2EB8E2;
+  border-bottom: 4px solid #2EB8E2;
+}
+
+.menu a:last-child {
+  padding-right: 0;
+}
+
+@media screen and (max-width: 1280px) {
+  .menu a {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .menu a {
+    font-size: 15px;
+    margin: 0 1em;
+  }
+}
+@media screen and (max-width: 940px) {
+  .menu {
+    margin-top: 30px;
+  }
+
+  .menu a {
+    font-size: 14px;
+    display:block;
+    line-height: 1.5em;
+  }
+}
+@media screen and (max-width: 550px) {
+  .menu {
+    margin-top: 20px;
+  }
+}
