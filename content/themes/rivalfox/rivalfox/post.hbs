@@ -23,9 +23,9 @@
       </div>
       <div class="medium-6 large-4 columns text-right">
         <ul class="button-group social">
-          <li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{ url absolute='true' }}&title={{ title }}" class="button"><i class="fa fa-linkedin"></i></a></li>
-          <li><a href="https://www.twitter.com/share?text={{ title }}url={{ url absolute='true' }}" class="button"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ url absolute='true' }}" class="button"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{ @blog.url }}{{ url }}&title={{ title }}" class="button"><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="https://www.twitter.com/share?text={{ title }}url={{ @blog.url }}{{ url }}" class="button"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ @blog.url }}{{ url }}" class="button"><i class="fa fa-facebook"></i></a></li>
           {{!-- <li><a href="#" class="button"><i class="fa fa-share-alt"></i></a></li> --}}
         </ul>
       </div>
