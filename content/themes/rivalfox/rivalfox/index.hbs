@@ -27,7 +27,7 @@
         <div class="post__detail small-12 medium-6 columns">
           <header>
             <span class="epigraph">{{#foreach tags}}{{#if @first}}{{ name }}{{/if}}{{/foreach}}</span>
-            <h2>{{ title }}</h2>
+            <h2><a href="{{ url }}">{{ title }}</a></h2>
           </header>
           {{ content words='17' }}
           <a href="{{ url }}" class="button">Read Full Post</a>
