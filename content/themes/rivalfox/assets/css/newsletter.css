@@ -93,15 +93,16 @@
   text-decoration: none;
   font-size: 22px;
   vertical-align: sub;
+  transition: color 250ms ease-out, box-shadow 250ms ease-out;
 }
 
 .menu a:hover:not(.btn), .menu a:focus:not(.btn){
   color: #2EB8E2;
-  border-bottom: 4px solid #2EB8E2;
+  box-shadow: 0 4px 0 #2EB8E2;
 }
 
 .menu a.active {
-  border-bottom: 4px solid #2EB8E2;
+  box-shadow: 0 4px 0 #2EB8E2;
 }
 
 .menu a:last-child {
