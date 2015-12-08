@@ -1,0 +1,78 @@
+.post-banner {
+  box-sizing: border-box;
+  position: fixed;
+  font-size: 10px;
+  right: 0;
+  top: 50%;
+  width: 37.5em;
+  margin-top: -32.2em;
+  height: 65em;
+  background: #D3E9FF url('../images/fox-banner.png') 100% 100% no-repeat;
+  background-size: 100%;
+  padding: 4.5em 3em 3.5em 5em;
+  border: .7em solid #F7FBFF;
+  transform: translate3d(100%, 0, 0);
+  transition: transform .3s linear;
+}
+
+.post-banner.is_active {
+  transform: translate3d(0, 0, 0);
+}
+
+.post-banner h3 {
+  font-size: 4.2em;
+  line-height: 1.25em;
+}
+
+.post-banner p {
+  color: #3C3C3C !important;
+  line-height: 1.35em;
+  font-size: 1.4em;
+}
+
+.post-banner__input {
+  font-size: 1.5em !important;
+  color: #000 !important;
+  padding: 0 2em !important;
+  text-align: left !important;
+  height: 3.75em !important;
+  line-height: 3.75em !important;
+  margin: 0 0 .6em 0 !important;
+}
+
+.post-banner__submit {
+  font-size: 1.5em !important;
+  color: #fff;
+  padding: 0;
+  display: block;
+  background: #000000 !important;
+  border-radius: .2em !important;
+  height: 3.75em !important;
+  line-height: 3.75em !important;
+}
+
+@media all and (max-width: 1600px) {
+  .post-banner {
+    font-size: 8px;
+  }
+}
+
+@media all and (max-width: 1440px) {
+  .post-banner {
+    font-size: 7px;
+    width: 30em;
+    padding: 4.5em 3em 3.5em 3em;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .post-banner {
+    display: none;
+  }
+}
+
+@media all and (max-height: 646px) {
+  .post-banner {
+    display: none !important;
+  }
+}

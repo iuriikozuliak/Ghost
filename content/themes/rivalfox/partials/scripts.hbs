@@ -13,7 +13,9 @@
 
     // jQuery elements
     var $panel = $('.newsletter-panel');
+    var $banner = $('.post-banner');
     var $article = $('.article');
+    var $header = $('.header');
     var $userClose = $('.newsletter-panel .newsletter-panel__close');
     var $form = $('.newsletter-panel__form');
     var $emailInput = $('.newsletter-panel__email');
@@ -22,19 +24,26 @@
     // Measurements
     var articleStart = $article.offset().top;
     var articleHeight = $article.height();
+    var headerHeight = $header.height();
     var scrollEnd = articleStart + (articleHeight / 2);
 
     // Scroll observable
     var scrollStream = $(window)
       .asEventStream('scroll')
-      // .filter(debug)
-      .map(translateToY)
-      .filter(scrollIsWithinRange)
-      .filter(panelIsInactive);
+      .map(translateToY);
 
-    var stopListening = scrollStream.subscribe(function(h){
-      $panel.addClass(ACTIVE_CLASS);
-    });
+    scrollStream
+      .filter(scrollIsWithinRange(scrollEnd))
+      .filter(panelIsInactive)
+      .subscribe(function(h){
+        $panel.addClass(ACTIVE_CLASS);
+      });
+
+    scrollStream
+      .filter(scrollIsWithinRange(headerHeight))
+      .subscribe(function(h){
+        $banner.addClass('is_active');
+      });
 
     // Vanilla jQuery Event-bindings
     $userClose.on('click', function(e){
@@ -72,8 +81,10 @@
       return window.scrollY;
     }
 
-    function scrollIsWithinRange(scrollPos){
-      return scrollPos > scrollEnd;
+    function scrollIsWithinRange(endPos){
+      return function(scrollPos){
+        return scrollPos > endPos;
+      }
     }
 
     function panelIsInactive(){
@@ -87,7 +98,6 @@
     // General functions
     function closePanel(){
       $panel.removeClass(ACTIVE_CLASS);
-      stopListening();
     }
 
   })(window,document,jQuery);
